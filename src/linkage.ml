@@ -43,5 +43,5 @@ let raise_error r =
     | Not_a_linkage_plugin -> "Not a Linkage plugin"
     | Wrong_plugin_type p ->
        "Wrong plugin type " ^
-       Obj.(extension_name (extension_constructor p)) in
+       Obj.Extension_constructor.(name (of_val p)) in
   raise (Error (text, err))
